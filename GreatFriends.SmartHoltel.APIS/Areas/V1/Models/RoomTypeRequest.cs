@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Data
+namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Models
 {
     public class RoomTypeRequest
     {

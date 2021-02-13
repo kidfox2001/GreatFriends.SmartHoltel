@@ -18,5 +18,9 @@ namespace GreatFriends.SmartHoltel.Models
         // Navigation Propertys
         public virtual RoomType Type { get; set; }
 
+        [ForeignKey(nameof(Type))]
+        public string TypeCode { get; set; }
+
+
     }
 }

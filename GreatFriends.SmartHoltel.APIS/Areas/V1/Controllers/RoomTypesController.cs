@@ -1,4 +1,4 @@
-﻿using GreatFriends.SmartHoltel.APIS.Areas.V1.Data;
+﻿using GreatFriends.SmartHoltel.APIS.Areas.V1.Models;
 using GreatFriends.SmartHoltel.Models;
 using GreatFriends.SmartHoltel.Services.Data;
 using Microsoft.AspNetCore.Http;
