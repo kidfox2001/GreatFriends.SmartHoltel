@@ -13,6 +13,12 @@ namespace GreatFriends.SmartHoltel.Services.Data
     public class AppDb : DbContext
     {
 
+        public AppDb()
+        {
+            //
+        }
+
+
         public AppDb(DbContextOptions<AppDb> options) :base(options)
         {
 
@@ -21,6 +27,23 @@ namespace GreatFriends.SmartHoltel.Services.Data
         public DbSet<Room> Rooms { get; set; }
 
         public DbSet<RoomType> RoomTypes { get; set; }
+
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            if (!optionsBuilder.IsConfigured)
+            {
+                optionsBuilder.UseSqlServer("Data Source=(local)\\sqlexpress;Initial Catalog=SmartHotel_Thitipong;Integrated Security=True;multipleactiveresultsets=true");
+            }
+        }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<RoomType>().Property(x => x.Price)
+               .HasColumnType("decimal")
+               .HasPrecision(18, 2);
+        }
 
     }
 }

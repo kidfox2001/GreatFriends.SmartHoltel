@@ -4,22 +4,23 @@ using System.Text;
 
 namespace GreatFriends.SmartHoltel.PayWithDI
 {
-    public class Counter
+    public class Counter : ICounter
     {
+        private readonly IEnumerable<IOutput> outputs;
         private int prefix;
         private int nextId = 1;
 
-        public Counter()
+        public Counter(IEnumerable<IOutput> outputs)
         {
             var r = new Random();
             prefix = r.Next(100, 999 + 1);
+            this.outputs = outputs;
         }
-
-
         public void Print()
         {
-            Console.WriteLine($"{prefix}---{nextId++:0000}");
+            foreach (var output in outputs)
+                output.Write($"{prefix}-{nextId++:0000}");
         }
-
     }
+
 }

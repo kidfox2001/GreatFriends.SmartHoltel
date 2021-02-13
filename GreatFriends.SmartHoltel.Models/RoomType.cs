@@ -15,7 +15,9 @@ namespace GreatFriends.SmartHoltel.Models
         [StringLength(50)]
         public  string Name { get; set; }
 
-        [Range(0,99_999)]
+
+        [Range(0, 99_999)]
+        //[Column(TypeName = "decimal(18, 2)")]
         public decimal Price { get; set; }
 
 

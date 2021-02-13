@@ -21,6 +21,7 @@ namespace GreatFriends.SmartHoltel.Models
         [ForeignKey(nameof(Type))]
         public string TypeCode { get; set; }
 
-
+        public virtual ICollection<Reservation> Reservations { get; set; } 
+            = new HashSet<Reservation>();
     }
 }
