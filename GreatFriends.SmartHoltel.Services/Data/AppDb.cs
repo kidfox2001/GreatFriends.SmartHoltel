@@ -28,6 +28,8 @@ namespace GreatFriends.SmartHoltel.Services.Data
 
         public DbSet<RoomType> RoomTypes { get; set; }
 
+        public DbSet<Reservation> Reservations { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

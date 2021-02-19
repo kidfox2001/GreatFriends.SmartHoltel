@@ -11,6 +11,10 @@ using System.Threading.Tasks;
 
 namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Controllers
 {
+    //todo เติม <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers> ที่ csproj ที่ project นี้
+    //todo แก้ที่ alert
+
+
     [Route("api/V1/[controller]")]
     [Produces("application/json")]
     [ApiController]
@@ -72,7 +76,7 @@ namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Controllers
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesDefaultResponseType]
-        public ActionResult<Room> Create(RoomRequest item)
+        public ActionResult<RoomResponse> Create(RoomRequest item)
         {
 
             var itemRoomType = db.RoomTypes.Find(item.RoomType);
