@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatFriends.SmartHoltel.Mo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatFriends.SmartHoltel.Services", "GreatFriends.SmartHoltel.Services\GreatFriends.SmartHoltel.Services.csproj", "{C2504F9F-0B3E-4E7E-9219-35DDBA5045B0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GreatFriends.SmartHoltel.PayWithDI", "GreatFriends.SmartHoltel.PayWithDI\GreatFriends.SmartHoltel.PayWithDI.csproj", "{4AE0A382-79F8-4809-8922-5E135A9216C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GreatFriends.SmartHoltel.PayWithDI", "GreatFriends.SmartHoltel.PayWithDI\GreatFriends.SmartHoltel.PayWithDI.csproj", "{4AE0A382-79F8-4809-8922-5E135A9216C8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

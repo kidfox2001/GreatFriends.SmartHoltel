@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Models
 {
-    public class ReservationDeleteRequest
+    public class ReservationsDeleteRequest
     {
         [Required]
         public int Id { get; set; }

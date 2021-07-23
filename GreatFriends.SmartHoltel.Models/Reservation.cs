@@ -35,7 +35,7 @@ namespace GreatFriends.SmartHoltel.Models
         public string CancelReason { get; set; }
 
 
-        public void CancelReservation(DateTime canceledDate, string cancelReason)
+        public void Cancel(DateTime canceledDate, string cancelReason)
         {
             IsCanceled = true;
             CanceledDate = canceledDate;

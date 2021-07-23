@@ -39,6 +39,7 @@ namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Models
                 Email = this.Email,
                 Mobile = this.Mobile,
                 RoomId = this.RoomId,
+                CreatedDate= DateTime.Now,
 
             };
 

@@ -3,6 +3,7 @@ using GreatFriends.SmartHoltel.Models;
 using GreatFriends.SmartHoltel.Services.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,11 +24,20 @@ namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Controllers
 
 
         [HttpGet]
-        public ActionResult<IEnumerable<RoomType>> GetAll()
+        public async Task<ActionResult<IEnumerable<RoomTypeResponse>>> GetAllAsync()
         {
-            var items = db.RoomTypes.OrderBy(x => x.Name).ToList();
+            //var items = await db.RoomTypes.OrderBy(x => x.Name)
+            //                          .Select(q => RoomTypeResponse.FromModel(q))
+            //                        .ToListAsync();
 
-            return items;
+
+            var items = await db.RoomTypes.OrderBy(x => x.Name) 
+                                         .Include(q => q.Rooms)
+                                   .ToListAsync();
+
+            var output = items.ConvertAll( RoomTypeResponse.FromModel);
+
+            return output;
         }
 
         [HttpGet("{code}")]
