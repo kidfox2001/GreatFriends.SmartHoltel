@@ -14,7 +14,8 @@ namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Controllers
     //todo เติม <IncludeOpenAPIAnalyzers>true</IncludeOpenAPIAnalyzers> ที่ csproj ที่ project นี้
     //todo แก้ที่ alert
 
-
+    //[ApiExplorerSettings(GroupName = "Custom Group Name")]
+    //[ApiExplorerSettings(IgnoreApi = true)]
     [Route("api/V1/[controller]")]
     [Produces("application/json")]
     [ApiController]
@@ -51,7 +52,7 @@ namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Controllers
             return output;
         }
 
-
+        //[ApiExplorerSettings(IgnoreApi = true)]
         [HttpGet("{id}")]
         [ProducesResponseType(StatusCodes.Status200OK,Type=typeof(RoomResponse))]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -71,7 +72,11 @@ namespace GreatFriends.SmartHoltel.APIS.Areas.V1.Controllers
             return RoomResponse.FromModel(item);
         }
 
-
+        /// <summary>
+        /// สร้าง
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
         [HttpPost]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
